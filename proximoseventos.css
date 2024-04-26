@@ -1,0 +1,273 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: black;
+}
+
+/* SIDEBAR */
+.sidebar {
+    height: 100vh;
+    width: 80px;
+    background: linear-gradient(135deg, #620da8f6, #110986);
+    padding: 20px;
+    box-sizing: border-box;
+    color: #fff;
+    overflow: hidden;
+    transition: width .75s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar:hover {
+    width: 200px;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    /* Adicionando espaço acima e abaixo */
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.sidebar a .text {
+    display: none;
+}
+
+.sidebar:hover a .text {
+    display: inline-block;
+}
+
+.sidebar a:hover {
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 2px;
+}
+
+/* CARROSSEL */
+.carousel {
+    width: 100%;
+    max-width: 800px;
+    height: 200px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* FIM DO CARROSSEL */
+
+/* ÁREA DA PÁGINA QUE TEM O CARROSSEL E OS EVENTOS */
+.nav {
+    flex: 1;
+}
+
+.content {
+    position: absolute;
+    top: 20px;
+    width: calc(100% - 200px);
+    box-sizing: border-box;
+    padding: 10px;
+    margin-left: 200px;
+}
+
+.eventos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+
+.evento {
+    height: 260px;
+    width: 100%;
+    background-color: #0000005e;
+    border-radius: 10px;
+    border: 1px solid #620da8f6;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.384);
+    box-sizing: border-box;
+    /* Mantém a largura correta com padding e borda */
+}
+
+
+.evento:hover {
+    transform: scale(1.05);
+}
+
+.evento img {
+    max-width: 100%;
+    max-height: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.evento p {
+    color: #fff;
+    object-fit: cover;
+    font-size: 1em;
+    margin-bottom: -15px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #f9f9f9;
+    margin: 10% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+
+}
+
+.modal-content input,
+textarea {
+    border: 2px solid #620da885;
+    border-radius: 5px;
+    padding: 3px;
+    outline: none;
+    margin-top: 10px;
+
+}
+
+.modal-content input:focus {
+    border-color: #110986;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* BOTÃO COMPRAR */
+#btcomprar {
+    padding: 5px 10px;
+    background: linear-gradient(to left, rgb(92, 12, 102), #2296e4);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#btcomprar:hover {
+    background: transparent;
+    color: black;
+    border: 1px solid #110986;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 780px) {
+    .eventos-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar:hover {
+        width: 160px;
+    }
+}
+
+@media (max-width: 610px) {
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .eventos-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .eventos-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

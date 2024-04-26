@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Evento</title>
+    <link rel="stylesheet" href="../css/promover.css">
+    <!-- para pesquisar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<header>
+    <!-- menu strip dropdown -->
+    <div class="header">
+        <div class="dropdown">
+            <button class="dropbtn"></button>
+            <div class="dropdown-content">
+                <a href="#">Ajuda</a>
+                <a href="../../index.html">Sair</a>
+                <a href="../html/perfil.html">Perfil</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <!-- BOTÃO DE ADICIONAR EVENTO-->
+    <div class="content">
+        <div class="add-evento" id="add-evento">
+            <span class="icon">+</span>
+        </div>
+        <!-- CAIXA DE PESQUISA - USEI A BIBLIOTECA -->
+        <div class="pesquisa">
+            <i id="pesquisar-evento" class="fas fa-search" aria-hidden="true"></i>
+            <input type="text" id="campo-pesquisa" placeholder="Pesquisar eventos">
+        </div>
+        <!-- MODAL PARA CADASTRO DE EVENTOS -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Cadastrar Evento</h2>
+                <form id="formulario-evento">
+                    <label for="nome">Nome do Evento:</label>
+                    <input type="text" id="nome" name="nome" required><br>
+
+                    <label for="data-hora">Data e Hora:</label>
+                    <input type="datetime-local" id="data-hora" name="data-hora" required><br>
+
+                    <label for="local">Local:</label>
+                    <input type="text" id="local" name="local" required><br>
+
+                    <label for="valor">Valor do Ingresso:</label>
+                    <input type="number" id="valor" name="valor" required><br>
+
+                    <label for="foto">Foto de Capa:</label>
+                    <input type="file" id="foto" name="foto" accept="image/*" required><br>
+
+                    <label for="sobre">Sobre o Evento:</label>
+                    <textarea id="sobre" name="sobre" required></textarea><br>
+
+                    <label for="pix">Chave pix:</label>
+                    <input type="number" name="chavepix" id=""><br>
+
+                    <label for="quantidade-lotes">Quantidade de Lotes:</label>
+                    <input type="number" id="quantidade-lotes" name="quantidade-lotes" min="1" required><br>
+
+                    <div id="lotes-container"></div>
+
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+        <div class="eventos-container" id="eventos-container">
+            <!-- LISTA DE EVENTOS -->
+        </div>
+
+    </div>
+    <!-- MODAL DE INFORMAÇÕES DO EVENTO -->
+    <div class="modal" id="modal-info">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="evento-info-modal">
+                <h3>Nome do Evento</h3>
+                <!-- Outras informações do evento -->
+                <p><strong>Informações das Vendas:</strong></p>
+                <p><strong>Ingressos Vendidos:</strong> <span id="ingressos-vendidos"></span></p>
+                <p><strong>Lote Atual:</strong> <span id="lote-atual"></span></p>
+            </div>
+            <button id="editar-evento">Editar</button>
+            <button id="excluir-evento">Excluir</button>
+        </div>
+    </div>
+    <!--MODAL DE EDIÇÃO DO EVENTO -->
+    <div id="modal-edit" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Editar Evento</h2>
+            <form id="formulario-edit">
+                <label for="nome-edit">Nome do Evento:</label>
+                <input type="text" id="nome-edit" name="nome-edit" required><br>
+
+                <label for="data-hora-edit">Data e Hora:</label>
+                <input type="datetime-local" id="data-hora-edit" name="data-hora-edit" required><br>
+
+                <label for="local-edit">Local:</label>
+                <input type="text" id="local-edit" name="local-edit" required><br>
+
+                <label for="valor-edit">Valor do Ingresso:</label>
+                <input type="number" id="valor-edit" name="valor-edit" required><br>
+
+                <label for="foto-edit">Foto de Capa:</label>
+                <input type="file" id="foto-edit" name="foto-edit" accept="image/*" required><br>
+
+                <label for="sobre-edit">Sobre o Evento:</label>
+                <textarea id="sobre-edit" name="sobre-edit" required></textarea><br>
+
+                <label for="sobre">Chave pix:</label>
+                <input type="number" name="chavepix-edit" id="chavepix-edit"><br>
+
+                <button id="editar" type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/promover.js"></script>
+</body>
+
+</html>

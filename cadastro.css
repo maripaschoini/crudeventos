@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'Blacker';
+    src: url('blacker-sans-display-trial.light.ttf') format('truetype');
+}
+
+body {
+    background: linear-gradient(135deg, #2e0152f6, #06023d);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    color: white;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+}
+
+input {
+    background-color: transparent;
+    border-width: 1px;
+    border-color: white;
+    color: white;
+    border-radius: 10px;
+    width: 80%;
+    padding: 5px;
+}
+
+/* FORMULÁRIO */
+.form {
+
+    background-color: transparent;
+    margin: 10% auto;
+    padding: 25px;
+    border: 1px solid #888;
+    width: 30%;
+    height: 50%;
+    border-radius: 10px;
+
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+/* BOTÃO */
+.button-link {
+    display: inline-block;
+    padding: 10px;
+    width: 45%;
+    background: linear-gradient(to left, rgb(92, 12, 102), #2296e4);
+    border-radius: 10px;
+    color: white;
+    border: 1px solid transparent;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.button-link:hover {
+    background: transparent;
+    border-color: white;
+    transition: background-color 1s;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 800px) {
+    .body {
+        display: flex;
+    }
+
+    .form {
+        width: 50%;
+        height: auto;
+        margin-top: 10%;
+    }
+    .form input{
+        margin-top: 10%;
+    }
+
+}

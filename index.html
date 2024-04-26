@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vamo pra onde</title>
+  <link rel="stylesheet" href="assets/css/index.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="texto">
+      <h1 id="h1">Vamo pra onde?</h1>
+      <h2 id="h2">Ache a boa de hoje!</h2>
+      <button id="abrirModal">começar</button>
+    </div>
+
+    <!-- modal para login que abre quando clica no botão de 'começar'-->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="fechar">&times;</span>
+        <h3>Login</h3>
+        <form>
+          <input type="text" id="username" name="username" placeholder="usuário" required>
+          <br>
+          <input type="password" id="password" name="password" placeholder="senha" required>
+          <br>
+          <br>
+          <button id="entrarModal">entrar</button>
+          <!-- linka para a página de cadastro -->
+          <a href="assets/html/cadastro.html">Cadastre-se</a>
+        </form>
+      </div>
+    </div>
+
+    <script src="assets/js/index.js"></script>
+
+</body>
+
+</html>

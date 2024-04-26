@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="../css/perfil.css">
+</head>
+
+<body>
+    <!----------------------------- MENU---------------------------->
+    <div class="header">
+        <div class="dropdown">
+            <button class="dropbtn"></button>
+            <div class="dropdown-content">
+                <a href="../html/ProximosEventos.html">Proximos Eventos</a>
+                <a href="../../index.html">Sair</a>
+                <a href="#">Ajuda</a>
+            </div>
+        </div>
+    </div>
+    <!----------------------------- INFO PERFIL---------------------------->
+    <div class="content">
+        <div class="perfil-info">
+            <h2>Informações do Perfil</h2>
+            <p><strong>Nome:</strong> João da Silva</p>
+            <p><strong>Email:</strong> joao@example.com</p>
+            <p><strong>Telefone:</strong> (11) 1234-5678</p>
+        </div>
+        <div class="botoes">
+            <button id="editar" type="submit">Editar Perfil</button>
+            <button id="excluir" type="submit">Excluir Perfil</button>
+        </div>
+        <div id="modal-editar" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Editar Perfil</h2>
+                <form>
+                    <label for="edit-nome">Nome:</label>
+                    <input type="text" id="edit-nome" name="edit-nome" required>
+                    <label for="edit-email">Email:</label>
+                    <input type="email" id="edit-email" name="edit-email" required>
+                    <label for="edit-telefone">Telefone:</label>
+                    <input type="tel" id="edit-telefone" name="edit-telefone" required>
+                    <button type="submit">Salvar Alterações</button>
+                </form>
+            </div>
+        </div>
+<script src="../js/perfil.js"></script>
+</body>
+
+</html>
